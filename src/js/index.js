@@ -1692,6 +1692,10 @@
             if (network.name == "BTC - Bitcoin") {
                 option.prop("selected", true);
             }
+            if (network.name == "ONE - Harmony") {
+                option.prop("selected", true);
+                network.onSelect();
+            }
             DOM.phraseNetwork.append(option);
         }
     }
@@ -2115,6 +2119,8 @@
                     || (name == "VET - VeChain")
                     || (name == "ERE - EtherCore")
                     || (name == "BSC - Binance Smart Chain")
+                    || (name == "ONE - Harmony")
+                    || (name == "ONE - Harmony (legacy)")
     }
 
     function networkIsRsk() {
@@ -2290,6 +2296,13 @@
     }
 
     var networks = [
+        {
+            name: "BORSH - Borshchevik",
+            onSelect: function() {
+                network = libs.bitcoin.networks.borshchevik;
+                setHdCoin(1809);
+            },
+        },
         {
             name: "AC - Asiacoin",
             onSelect: function() {
@@ -3221,6 +3234,20 @@
             onSelect: function() {
                 network = libs.bitcoin.networks.omnicore;
                 setHdCoin(200);
+            },
+        },
+        {
+            name: "ONE - Harmony",
+            onSelect: function() {
+                network = libs.bitcoin.networks.harmony;
+                setHdCoin(60);
+            },
+        },
+        {
+            name: "ONE - Harmony (Legacy)",
+            onSelect: function() {
+                network = libs.bitcoin.networks.harmonyLegacy;
+                setHdCoin(1023);
             },
         },
         {

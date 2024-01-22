@@ -1153,6 +1153,28 @@ libs.bitcoin.networks.omnicore = {
   wif: 0x80,
 };
 
+libs.bitcoin.networks.harmony = {
+  messagePrefix: '\x18Bitcoin Signed Message:\n',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x00,
+  scriptHash: 0x05,
+  wif: 0x80,
+};
+
+libs.bitcoin.networks.harmonyLegacy = {
+  messagePrefix: '\x18Bitcoin Signed Message:\n',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x00,
+  scriptHash: 0x05,
+  wif: 0x80,
+};
+
 libs.bitcoin.networks.pesobit = {
   messagePrefix: '\x18Pesobit Signed Message:\n',
   bip32: {
@@ -1909,4 +1931,16 @@ libs.bitcoin.networks.particl = {
   pubKeyHash: 0x38,
   scriptHash: 0x3c,
   wif: 0x6c,
+};
+
+libs.bitcoin.networks.borshchevik = {
+  messagePrefix: 'unused',
+  bech32: 'bc',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x19,
+  scriptHash: 0x35,
+  wif: 0x80,
 };
